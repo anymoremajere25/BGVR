@@ -1,0 +1,8 @@
+# Ignore Cargo.lock
+Cargo.lock
+
+# Ignore output files
+output.txt
+
+# Ignore target directory (Rust build artifacts)
+target/
