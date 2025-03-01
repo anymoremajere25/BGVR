@@ -1,0 +1,9 @@
+[package]
+name = "first_project"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+bio = "0.38.0"
+ndarray = "0.15.4"
+nalgebra = "0.29.0"
