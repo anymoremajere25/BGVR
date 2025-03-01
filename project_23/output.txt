@@ -1,0 +1,1 @@
+Total occurrences of motif 'GATTACA' across all sequences: 0

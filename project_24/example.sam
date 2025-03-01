@@ -1,0 +1,7 @@
+@HD     VN:1.0    SO:unsorted
+@SQ     SN:seq1   LN:10
+seq1    0   seq1    1   60  10M  *   0   0   AGCTAGCTAG   IIIIIIIIII
+seq2    0   seq1    1   60  10M  *   0   0   GATCGATCGA   IIIIIIIIII
+
+	
+
