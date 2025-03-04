@@ -1,0 +1,66 @@
+use std::collections::HashMap;
+use ndarray::Array2; // 's' removed, we keep 'Array2' just for demonstration.
+use nalgebra::DMatrix;
+use rayon::prelude::*;
+
+fn gene_gnn_iteration(
+    adjacency: &HashMap<usize, Vec<usize>>,
+    node_features: &DMatrix<f32>,
+) -> DMatrix<f32> {
+    let n = node_features.nrows();
+    let dim = node_features.ncols();
+    let mut updated = DMatrix::<f32>::zeros(n, dim);
+
+    // Instead of `par_row_iter_mut()`, we operate on the underlying slice
+    // and process chunks of size 'dim' in parallel.
+    updated
+        .as_mut_slice()
+        .par_chunks_mut(dim)
+        .enumerate()
+        .for_each(|(i, row_buf)| {
+            if let Some(neighbors) = adjacency.get(&i) {
+                // Accumulate neighbor features
+                let sum_features = neighbors.iter().fold(vec![0.0; dim], |mut acc, &nbr| {
+                    for d in 0..dim {
+                        acc[d] += node_features[(nbr, d)];
+                    }
+                    acc
+                });
+
+                // Average neighbor features into the row buffer
+                for d in 0..dim {
+                    row_buf[d] = sum_features[d] / (neighbors.len() as f32 + 1e-8);
+                }
+            }
+        });
+
+    updated
+}
+
+fn main() {
+    // Example adjacency and expression data
+    let adjacency: HashMap<usize, Vec<usize>> = HashMap::new();
+    let expression_data = DMatrix::<f32>::from_element(100, 10, 1.0);
+    let adjacency_nd = Array2::<f32>::ones((100, 100));
+
+    println!(
+        "Expression data shape: {} x {}",
+        expression_data.nrows(),
+        expression_data.ncols()
+    );
+    println!(
+        "Adjacency array shape: {} x {}",
+        adjacency_nd.nrows(),
+        adjacency_nd.ncols()
+    );
+
+    let updated = gene_gnn_iteration(&adjacency, &expression_data);
+    println!(
+        "Updated node features shape: {} x {}",
+        updated.nrows(),
+        updated.ncols()
+    );
+}
+fn main() {
+    println!("Hello, world!");
+}
