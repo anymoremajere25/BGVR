@@ -1,0 +1,4 @@
+Hello, world!
+Constructed De Bruijn graph with 19 nodes.
+nalgebra matrix: 5 x 5
+ndarray shape: 5 x 5
