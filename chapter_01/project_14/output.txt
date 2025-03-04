@@ -1,0 +1,15 @@
+Reading file: src/haplotype1.fasta
+Reading file: src/haplotype2.fasta
+Processing sequence: GATCGATCGATCGATCGTAC
+Processing sequence: ATCGATCGATCGATCGATCG
+Processing sequence: TACGTAGCTAGCTAGCTAGC
+Processing sequence: CGTACGTACGTACGTACGTA
+Reading file: src/haplotype3.fasta
+Processing sequence: ACGTACGTAGCTAGCTAGCT
+Processing sequence: CGTACGATCGTACGTAGCTA
+Constructed a pangenome graph with 29 nodes.
+Node: CGTAGCTAGC -> ["GTAGCTAGCT", "GTAGCTAGCT"]
+Node: ATCGTACGTA -> ["TCGTACGTAG"]
+Node: GTACGTAGCT -> ["TACGTAGCTA", "TACGTAGCTA"]
+Node: TACGTACGTA -> ["ACGTACGTAC", "ACGTACGTAC"]
+Node: ACGATCGTAC -> ["CGATCGTACG"]

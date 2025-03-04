@@ -1,0 +1,15 @@
+
+[package]
+name = "third_project"
+version = "0.1.0"
+edition = "2021"
+
+
+    
+[dependencies]
+bio = "2.0.3"
+rayon = "1.10.0"
+
+[[bin]]
+name = "third_project"
+path = "src/main.rs"
