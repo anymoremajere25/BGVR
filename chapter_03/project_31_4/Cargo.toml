@@ -1,0 +1,20 @@
+[package]
+name = "hardware_acceleration"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+# Add dependencies if necessary for GPU or FPGA (e.g., CUDA, OpenCL, etc.)
+# You can use crates that support GPU/FPGA programming or simulators.
+rayon = "1.10.0"  # For CPU parallelization (Rayon is used in the CPU path)
+
+# You can define optional features here:
+[features]
+default = []
+gpu = []  # Define an empty 'gpu' feature
+fpga = []  # Define an empty 'fpga' feature
+
+# If using external GPU or FPGA libraries, you can specify them here.
+# For example, you might add dependencies like this:
+# gpu = ["opencl", "cuda"]
+# fpga = ["xilinx-fpga"]

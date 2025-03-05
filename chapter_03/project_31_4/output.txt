@@ -1,0 +1,2 @@
+No GPU/FPGA features enabled. Using CPU fallback in parallel if desired.
+CPU-only fallback result: [1.1, 2.2, 3.3000002, 4.4, 5.5]
