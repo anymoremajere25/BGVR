@@ -1,0 +1,5 @@
+LinearIndex for genome of size: 2000000
+LinearIndex for genome of size: 3000000000
+GraphIndex with 250000 nodes, colored = false
+GraphIndex with 2000000 nodes, colored = false
+GraphIndex with 12000000 nodes, colored = true
