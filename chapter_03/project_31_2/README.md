@@ -1,4 +1,4 @@
-## Code Explanation
+## Code Explanation project_31_2
 
 This Rust program implements a MinHash algorithm to estimate the Jaccard similarity between two sets of items. The sets in this example are DNA sequences, and the goal is to compare their similarity using the MinHash technique. MinHash is a technique that allows us to approximate the similarity between sets based on hash values, and it's commonly used for problems involving large datasets, such as document similarity.
 ###  Key Components:
