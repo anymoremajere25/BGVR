@@ -1,0 +1,4 @@
+Sequence: TTAAGTAGCGGCTGTTATGT => in Bloom Filter? true
+Sequence: CCATCCGCCGTCTTACATAC => in Bloom Filter? true
+Sequence: GCAATAATCACCATCCACTA => in Bloom Filter? false
+Sequence: CTACGGCCTTAGCAATGAGC => in Bloom Filter? false
