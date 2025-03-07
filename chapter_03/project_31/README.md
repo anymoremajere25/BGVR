@@ -1,4 +1,6 @@
-## EXPLANATION /OVERVIEW OF project_31
+## 3.1. Introduction to Data Processing in Bioinformatics
+
+### EXPLANATION /OVERVIEW OF project_31
 
 This Rust program demonstrates the use of a Bloom Filter to efficiently test membership in a set of DNA sequences. It uses parallelism to speed up the insertion of sequences into the filter, and it handles random sequence generation and testing.
 ### 1. Bloom Filter Implementation:
