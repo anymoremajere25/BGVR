@@ -1,0 +1,5 @@
+Reading from FASTQ: example.fastq, k-mer=31
+Loaded 1 reads. Building de Bruijn graph & Bloom filter...
+Bloom filter contains 'ACGT'? false
+De Bruijn graph saved to results/graph.json
+Bloom filter saved to results/bloom.json
