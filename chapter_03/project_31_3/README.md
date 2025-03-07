@@ -1,4 +1,6 @@
-## Code Explanation -project_31_3
+## 3.1. Introduction to Data Processing in Bioinformatics
+
+### Code Explanation -project_31_3
 
 This Rust program is designed for genomic data indexing. It uses the Rayon crate to parallelize tasks like building different types of genomic indexes, which are used to represent and query genomic data in different formats (e.g., linear, graph-based). The program defines a simple structure for various genomic data types and their corresponding indexing methods, and it processes these tasks in parallel to handle large-scale datasets efficiently.
 ## Key Components:
