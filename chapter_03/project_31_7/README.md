@@ -1,3 +1,6 @@
+## 3.1. Introduction to Data Processing in Bioinformatics
+
+## project_31_7
 This Rust and Nextflow pipeline is designed to analyze a FASTQ file, build a De Bruijn graph, and use a Bloom filter to track k-mers efficiently. Here's a breakdown of how it works:
 ### 1. Rust Program (main.rs)
 
