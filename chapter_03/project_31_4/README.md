@@ -1,4 +1,6 @@
-## Code Explanation project_31_4[ no GPU/FPGA features enabled]
+## 3.1. Introduction to Data Processing in Bioinformatics
+
+### Code Explanation project_31_4[ no GPU/FPGA features enabled]
 
 This Rust program demonstrates how to conditionally offload computations to GPU, FPGA, or CPU, based on which feature is enabled during compilation. It uses Rust's conditional compilation features (#[cfg(...)]) to choose the appropriate computation path for each platform.
 ## Key Concepts:
