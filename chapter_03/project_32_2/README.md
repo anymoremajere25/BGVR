@@ -1,3 +1,5 @@
+# 3.2. Sequence Data Structures and Strings Algorithms
+
 ## Explanation of MPI-Based Suffix Array Code [project_32_2]
 
 This Rust program parallelizes the construction of a suffix array using MPI (Message Passing Interface). Here's a breakdown of the code:
