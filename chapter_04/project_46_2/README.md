@@ -1,5 +1,5 @@
 ## 4.6 SINGLE-CELL FUNCTIONAL GENOMICS
-### Explanation of the CSR Matrix Multiplication in Rust
+### Explanation of the CSR Matrix Multiplication in Rust [project_46_2]
 
 This Rust program implements parallel multiplication of a Compressed Sparse Row (CSR) matrix with a vector using Rayon for parallelism. The output of the program is the result of this multiplication.
 ### 1. What is a CSR Matrix?
