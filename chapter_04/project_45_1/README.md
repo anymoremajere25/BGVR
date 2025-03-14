@@ -1,5 +1,5 @@
-## TRANSCRIPTOMICS AND ALTERNATIVE SPLICING ALGORITHMS
-Explanation of the Rust Program for Splicing Graph Construction
+## 4.6 TRANSCRIPTOMICS AND ALTERNATIVE SPLICING ALGORITHMS
+### Explanation of the Rust Program for Splicing Graph Construction [project_45_1]
 
 This Rust program constructs a splicing graph from genomic alignment data using parallel processing with Rayon.
 ### 1. Purpose of the Program
