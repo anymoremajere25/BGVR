@@ -1,5 +1,5 @@
 ## 4.4. EPIGENOMIC DATA INTEGRATION AND ALGORITHMS
-### Explanation of the Code and Output
+### Explanation of the Code and Output [project_44_1]
 ### Overview
 
 This Rust program processes chromosome coverage data, applies optional smoothing, detects peaks based on a threshold, and writes the results to a file. The computations are parallelized using the Rayon library for efficiency.
