@@ -1,5 +1,5 @@
 ## 4.6 SINGLE-CELL FUNCTIONAL GENOMICS
-### Explanation of the k-NN Graph Construction and Pseudotime Computation
+### Explanation of the k-NN Graph Construction and Pseudotime Computation [project_46_1]
 
 This Rust program builds a k-nearest neighbor (k-NN) graph from single-cell expression data and estimates pseudotime using Breadth-First Search (BFS). Let's go step by step through the process:
 #### 1. Data Representation
