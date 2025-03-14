@@ -1,0 +1,16 @@
+[
+  {
+    "snp_id": "rs123",
+    "gene_id": "GENE1",
+    "p_value": 0.05,
+    "peak_id": null,
+    "motif_id": null
+  },
+  {
+    "snp_id": "rs456",
+    "gene_id": "GENE2",
+    "p_value": 0.01,
+    "peak_id": null,
+    "motif_id": null
+  }
+]
