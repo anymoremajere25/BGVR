@@ -1,0 +1,3 @@
+Sampler 0 final motif positions: [0, 3, 4]
+Sampler 1 final motif positions: [0, 0, 7]
+Sampler 2 final motif positions: [3, 4, 0]
