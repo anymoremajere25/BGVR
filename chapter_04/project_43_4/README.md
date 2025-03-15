@@ -54,6 +54,16 @@ Print results
 ### 2. Output Analysis
 
 The program prints:
+Seq 0 - TATA default pattern matches: [4, 6]
+Seq 1 - TATA default pattern matches: [14]
+Seq 2 - TATA default pattern matches: []
+Seq 3 - TATA default pattern matches: []
+
+Seq 0 - TATA custom pattern (1 mismatch) matches: [2, 4, 6, 13]
+Seq 1 - TATA custom pattern (1 mismatch) matches: [0, 12, 14]
+Seq 2 - TATA custom pattern (1 mismatch) matches: [3]
+Seq 3 - TATA custom pattern (1 mismatch) matches: []
+
 
 Seq 0 - TATA default pattern matches: [4, 6]
 Seq 1 - TATA default pattern matches: [14]
