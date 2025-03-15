@@ -1,0 +1,2 @@
+Sequence:     ACGGAATACACGG
+Most-likely:  [NonMotif, NonMotif, NonMotif, NonMotif, NonMotif, NonMotif, NonMotif, NonMotif, NonMotif, NonMotif, NonMotif, NonMotif, NonMotif]
