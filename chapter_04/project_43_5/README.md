@@ -11,25 +11,11 @@ The workflow begins by splitting a large input FASTA file (genome.fa) into small
 The Rust code efficiently scans DNA sequences for TATA-like motifs, ensuring both speed and scalability. It defines a flexible TATAPattern structure that supports both exact and mismatch-tolerant motif searches, making it highly adaptable for analyzing entire genomes or large promoter regions.
 
 The TATAPattern struct maintains an array of valid nucleotides per position (e.g., ['T'] at position 0, ['A'] at position 1, etc.), along with a maximum mismatch threshold. The primary function, find_tata_boxes, slides a window across the sequence, checking whether the mismatches stay within the allowed limit. All nucleotide comparisons are case-insensitive for consistency. The parallel version, find_tata_boxes_parallel, leverages Rayon’s par_iter, distributing the computation across multiple CPU cores to speed up processing of large genomic datasets.
-File Structure
-
-**project_43_5/**
-
-│── Cargo.toml            # Dependencies configuration file
-│── motif_scanner         # Output file
-│── src/
-│   ├── main.rs           # Rust script
-├── main.nf           # Nextflow script
-├── genome.fa         # Input FASTA file
-├── input.fa          # Alternative input FASTA file
-├── output.json.rar   # Compressed JSON output
-├── tata_scan_merged.json.rar  # Compressed final output JSON
-
 How to Run
 
-Run the Rust script in PowerShell:
+Run the Rust script in Cursor:
 
-cargo run --release -- "C:\Users\trian\BGVR\chapter_04\experiment_43_5\src\genome.fa" "C:\Users\trian\BGVR\chapter_04\experiment_43_5\src\output.json"
+cargo run --release 
 
 Run the Nextflow pipeline in WSL:
 
@@ -74,7 +60,7 @@ This JSON file contains motif detection results, with each entry including:
 
         Some floating-point precision artifacts (e.g., 2.0999999999999996) may appear due to numerical computation rounding.
 
-Conclusion
+#### Conclusion
 
 The pipeline successfully completed:
 
