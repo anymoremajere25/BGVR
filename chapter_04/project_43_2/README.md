@@ -1,5 +1,6 @@
 ## 4.3 MOTIF DISCOVERY AND REGULATORY ELEMENT IDENTIFICATION
 [project_43_2]
+
 This Rust program implements a basic Expectation-Maximization (EM) algorithm for motif discovery in DNA sequences using a Position Weight Matrix (PWM) model. It simulates one EM iteration on an HPC (High-Performance Computing) system.
 ### 1. What This Code Does
 
