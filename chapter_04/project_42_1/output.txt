@@ -1,0 +1,4 @@
+Number of genes: 1000
+Number of samples: 50
+Output file: partial_adjacency.bin
+Correlation adjacency matrix written to partial_adjacency.bin
