@@ -13,7 +13,8 @@ The Rust code efficiently scans DNA sequences for TATA-like motifs, ensuring bot
 The TATAPattern struct maintains an array of valid nucleotides per position (e.g., ['T'] at position 0, ['A'] at position 1, etc.), along with a maximum mismatch threshold. The primary function, find_tata_boxes, slides a window across the sequence, checking whether the mismatches stay within the allowed limit. All nucleotide comparisons are case-insensitive for consistency. The parallel version, find_tata_boxes_parallel, leverages Rayon’s par_iter, distributing the computation across multiple CPU cores to speed up processing of large genomic datasets.
 File Structure
 
-project_43_5/
+**project_43_5/**
+
 │── Cargo.toml            # Dependencies configuration file
 │── motif_scanner         # Output file
 │── src/
