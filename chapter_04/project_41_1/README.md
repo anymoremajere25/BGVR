@@ -9,12 +9,13 @@ The Nextflow pipeline reads the synthetic FASTQ file (**synthetic_reads.fastq**)
 ```
 project_41_1/
     Cargo.toml               # Cargo dependencies file
-    project_41_1/src/
-        main.rs             # Rust script
-        main.nf             # Nextflow script
+        # Rust script
+        nextflow.nf             # Nextflow script
         synthetic_reads.fastq.rar  # Compressed FASTQ file
         mrf_results.txt     # MRF output file
         pwm_results.txt     # PWM output file
+project_41_1/src/
+        main.rs    
 ```
 
 ### **How to Run the Workflow:**
@@ -24,7 +25,7 @@ cargo run --release `
 
 #### **Run Nextflow Pipeline in WSL:**
 ```
-nextflow run main.nf --synthetic_fastq 'synthetic_reads.fastq'
+nextflow run nextflow.nf --synthetic_fastq 'synthetic_reads.fastq'
 ```
 
 ### **Dependencies (Cargo.toml)**
