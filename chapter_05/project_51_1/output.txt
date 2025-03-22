@@ -1,0 +1,9 @@
+Actual integer count: 10000
+Estimated integer count: 9560.80
+
+Actual string unique count: 5
+Estimated string count: 13.51
+
+Merging two HyperLogLogs each containing half of the integer range:
+Merged estimate of unique integers: 9560.80
+Actual unique count (0..10000): 10000
