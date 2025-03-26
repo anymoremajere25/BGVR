@@ -1,5 +1,6 @@
-# Explanation of the Helper Function for Loading a Genomic Sequence
-## experiment_2_6_1
+## 2.6 Brief introduction to CRISPR System
+### Explanation of the Helper Function for Loading a Genomic Sequence
+### experiment_2_6_1
 The helper function load_genome(path: &str) -> Result<String> is designed to read a genomic sequence from a file and store it in a String for further processing. This function is particularly useful for handling genomic data stored in FASTA format, which consists of a header line (starting with >) followed by nucleotide sequences.
 Function Breakdown:
 
