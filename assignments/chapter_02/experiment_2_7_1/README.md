@@ -32,7 +32,7 @@ Our Rust program downloads a FASTQ file from an NCBI link and saves it locally. 
 #### 5. Completion Message
 
     Once the file is saved, it prints a success message.
-
+### *UNFORTUNATELY THE DOWNLOADED FASTQ FILE IS VERY BIG AND IT CANNOT BE UPLOADED HERE!*
 #### Overall Purpose
 
 This program allows a user to download and save sequencing data (FASTQ format) from NCBI using Rust. It ensures reliability by handling HTTP errors and using buffered writing for efficiency.
