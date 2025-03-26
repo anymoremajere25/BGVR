@@ -1,7 +1,45 @@
-How We Found the SRR Accession Number (SRR32856754) and the FASTQ Download Link
+## 2.7 Data Computational Foundations
+
+### experiment_2_7_1
+
+### How the program works
+
+Our Rust program downloads a FASTQ file from an NCBI link and saves it locally. Here's a breakdown of how it works:
+#### 1. Dependencies and Setup
+
+    The program uses the reqwest crate to handle HTTP requests.
+
+    The blocking feature is enabled in Cargo.toml, allowing synchronous network requests.
+
+#### 2. Fetching the FASTQ File
+
+    The URL (fastq_url) points to an NCBI FASTQ file.
+
+    The program sends a GET request using reqwest::blocking::get(fastq_url)?.
+
+#### 3. Handling HTTP Response
+
+    It checks if the request was successful (response.status().is_success()).
+
+    If the request fails, it returns an error message.
+
+#### 4. Saving the File Locally
+
+    It creates a file (SRR32856754.fastq) and opens it for writing.
+
+    The response body is read as bytes and written to the file using BufWriter for efficiency.
+
+#### 5. Completion Message
+
+    Once the file is saved, it prints a success message.
+
+#### Overall Purpose
+
+This program allows a user to download and save sequencing data (FASTQ format) from NCBI using Rust. It ensures reliability by handling HTTP errors and using buffered writing for efficiency.
+#### How We Found the SRR Accession Number (SRR32856754) and the FASTQ Download Link
 
 Let's go step by step, from the very beginning—how we identified SRR32856754 and found the FASTQ download link.
-🔹 Step 1: Go to the NCBI Virus Sequence Search Interface
+##### 🔹 Step 1: Go to the NCBI Virus Sequence Search Interface
 
 We started by searching for SARS-CoV-2 sequences in NCBI's Virus Database.
 
@@ -24,7 +62,7 @@ We started by searching for SARS-CoV-2 sequences in NCBI's Virus Database.
 
         We clicked on one that looked relevant.
 
-🔹 Step 2: Locate the SRA Accession Number (SRR ID)
+##### 🔹 Step 2: Locate the SRA Accession Number (SRR ID)
 
     On the sequence details page, we looked for sequence read data.
 
@@ -35,14 +73,14 @@ We started by searching for SARS-CoV-2 sequences in NCBI's Virus Database.
     Copied the SRA Run Accession Number (SRR32856754).
 
 At this point, we had the SRR number (SRR32856754), which refers to a specific sequencing run in the NCBI SRA database.
-🔹 Step 3: Open the NCBI SRA Run Browser
+##### 🔹 Step 3: Open the NCBI SRA Run Browser
 
     We searched for the SRR ID in NCBI's SRA Run Browser:
     🔗 https://trace.ncbi.nlm.nih.gov/Traces/index.html?view=run_browser&acc=SRR32856754&display=download
 
     This page displayed metadata about the sequencing run and provided options for downloading the data.
 
-🔹 Step 4: Get the FASTQ Download Link
+##### 🔹 Step 4: Get the FASTQ Download Link
 
     We clicked on the "FASTA/FASTQ download" tab.
 
@@ -50,7 +88,7 @@ At this point, we had the SRR number (SRR32856754), which refers to a specific s
 
     Copied the direct FASTQ download link that appeared.
 
-🔹 Step 5: Use the Link in Rust for Automated Download
+##### 🔹 Step 5: Use the Link in Rust for Automated Download
 
 After getting the direct download link, we used Rust's reqwest library to fetch and save the FASTQ file:
 
@@ -69,7 +107,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
-✅ Summary of What We Did
+##### ✅ Summary of What We Did
 
     Started at the NCBI Virus Database → Searched for SARS-CoV-2 sequences.
 
