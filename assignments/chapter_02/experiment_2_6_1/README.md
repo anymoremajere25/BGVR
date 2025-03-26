@@ -64,10 +64,17 @@ Why This Function is Useful
 
     It efficiently handles multi-line genomic sequences, ensuring they are stored as a contiguous string.
 
-  ## Conclusion
+  ## Conclusion.
 
-The helper function load_genome provides an efficient way to read genomic sequences from FASTA files, ensuring that only the nucleotide data is retained while ignoring metadata. This is essential for bioinformatics applications where raw sequence data needs to be processed for tasks like sequence alignment, motif discovery, or phylogenetic analysis.
+The load_genome function successfully reads and processes a complete genomic sequence from an NCBI FASTA file, stripping out metadata and concatenating the nucleotide sequence into a single string. This processed sequence is then used to construct a suffix array, which is a fundamental data structure for efficient pattern matching and comparative genomics.
+Key Output Insights:
 
-In this case, the genomic data used was retrieved from NCBI, containing complete SARS-CoV-2 sequences, making it relevant for viral genome analysis. The function is particularly useful for handling large genomes, though optimizations such as streaming data in chunks could be considered for extremely large datasets.
+Genome length: 2972496
+Suffix array length: 2972496
+First 10 entries in suffix array: [2845856, 2311070, 1865468, 2221997, 2073539, 2014076, 2519108, 824517, 2964695, 2281379]
 
-Overall, this function serves as a foundational tool in genomic data processing, supporting downstream computational tasks like suffix array construction, sequence matching, and evolutionary analysis. Future improvements could include parallel reading techniques or memory-efficient approaches for handling multi-GB datasets.
+    Genome length (2,972,496 nucleotides): This confirms that the sequence was successfully loaded and processed.
+
+    Suffix array length (2,972,496 indices): Matches the genome length, indicating a complete suffix array was generated.
+
+    First 10 suffix array entries: These indices represent the lexicographically sorted suffixes of the genome, useful for fast substring searches.
