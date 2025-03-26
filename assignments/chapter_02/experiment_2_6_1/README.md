@@ -67,10 +67,13 @@ Why This Function is Useful
   ## Conclusion.
 
 The load_genome function successfully reads and processes a complete genomic sequence from an NCBI FASTA file, stripping out metadata and concatenating the nucleotide sequence into a single string. This processed sequence is then used to construct a suffix array, which is a fundamental data structure for efficient pattern matching and comparative genomics.
-Key Output Insights:
+
+### Key Output Insights:
 
 Genome length: 2972496
+
 Suffix array length: 2972496
+
 First 10 entries in suffix array: [2845856, 2311070, 1865468, 2221997, 2073539, 2014076, 2519108, 824517, 2964695, 2281379]
 
     Genome length (2,972,496 nucleotides): This confirms that the sequence was successfully loaded and processed.
