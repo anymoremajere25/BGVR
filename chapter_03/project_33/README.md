@@ -1,6 +1,6 @@
 # 3.3. Graph Data Structures for Genome Assembly and Beyond
 
-### project_33
+### project_33_1
 
 This project demonstrates how to build partial de Bruijn graphs from FASTQ data in Rust. The implementation utilizes needletail for efficient sequence parsing and Petgraph to represent overlapping k-mers in an undirected graph. By dividing reads into chunks and processing them in parallel using Rayon, each segment contributes to a partial de Bruijn graph, which is serialized for further merging or analysis. This design efficiently handles large genomic datasets by distributing computational workload across multiple cores while optimizing memory usage.
 
