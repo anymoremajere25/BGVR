@@ -1,7 +1,3 @@
-## Here’s the rephrased version while preserving all key concepts:  
-
----
-
 ### 3.3. Graph-Based Data Structures for Genome Assembly and Beyond  
 **experiment_3_3_1**  
 
