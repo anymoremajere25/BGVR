@@ -1,0 +1,7 @@
+k-NN edges:
+Cell 0 neighbors = [4, 1]
+Cell 1 neighbors = [4, 0]
+Cell 2 neighbors = [3, 1]
+Cell 3 neighbors = [2, 1]
+Cell 4 neighbors = [0, 1]
+Pseudotime from root=0: [0.0, 1.0, inf, inf, 1.0]
