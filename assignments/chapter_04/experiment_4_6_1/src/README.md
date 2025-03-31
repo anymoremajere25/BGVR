@@ -108,5 +108,3 @@ Pseudotime from root=0: [0.0, 1.0, 2.0, 3.0, 1.0]
 - **Uses parallelism** to build a **k-NN graph** from cell expression data.
 - **BFS traversal** is used to approximate a **pseudotime**.
 - **Highly scalable** for large datasets, but for HPC, **approximate methods (Annoy, Faiss)** might be preferable.
-
-Would you like me to m
