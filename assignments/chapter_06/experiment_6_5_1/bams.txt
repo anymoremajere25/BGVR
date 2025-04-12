@@ -1,0 +1,2 @@
+dummy1.bam.txt
+dummy2.bam.txt

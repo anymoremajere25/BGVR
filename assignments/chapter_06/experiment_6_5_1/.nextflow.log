@@ -1,0 +1,76 @@
+Apr-13 00:00:10.839 [main] DEBUG nextflow.cli.Launcher - $> nextflow run workflow.nf
+Apr-13 00:00:10.968 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.10.5
+Apr-13 00:00:11.019 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/ragon/.nextflow/plugins; core-plugins: nf-amazon@2.9.2,nf-azure@1.10.2,nf-cloudcache@0.4.2,nf-codecommit@0.2.2,nf-console@1.1.4,nf-google@1.15.4,nf-tower@1.9.3,nf-wave@1.7.4
+Apr-13 00:00:11.053 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-13 00:00:11.054 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-13 00:00:11.059 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Apr-13 00:00:11.080 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Apr-13 00:00:11.245 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Apr-13 00:00:11.267 [main] DEBUG nextflow.cli.CmdRun - Launching `workflow.nf` [trusting_golick] DSL2 - revision: 573cb4eed1
+Apr-13 00:00:11.270 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Apr-13 00:00:11.270 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Apr-13 00:00:11.394 [main] DEBUG nextflow.Session - Session UUID: f04e9e27-b53f-497f-852f-4562739cde91
+Apr-13 00:00:11.395 [main] DEBUG nextflow.Session - Run name: trusting_golick
+Apr-13 00:00:11.396 [main] DEBUG nextflow.Session - Executor pool size: 4
+Apr-13 00:00:11.420 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Apr-13 00:00:11.446 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Apr-13 00:00:11.529 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 24.10.5 build 5935
+  Created: 04-03-2025 17:55 UTC (05-03-2025 00:55 WIST)
+  System: Linux 5.15.167.4-microsoft-standard-WSL2
+  Runtime: Groovy 4.0.23 on OpenJDK 64-Bit Server VM 11.0.26+4-post-Ubuntu-1ubuntu124.04
+  Encoding: UTF-8 (UTF-8)
+  Process: 47465@DESKTOP-CI2MM8K [127.0.1.1]
+  CPUs: 4 - Mem: 3.8 GB (1.6 GB) - Swap: 1 GB (1 GB)
+Apr-13 00:00:11.600 [main] DEBUG nextflow.Session - Work-dir: /home/ragon/BGVR/chapter_06/experiment_6_5_1_b/work [ext2/ext3]
+Apr-13 00:00:11.601 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/ragon/BGVR/chapter_06/experiment_6_5_1_b/bin
+Apr-13 00:00:11.623 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Apr-13 00:00:11.641 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Apr-13 00:00:11.708 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Apr-13 00:00:11.726 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 5; maxThreads: 1000
+Apr-13 00:00:11.833 [main] DEBUG nextflow.Session - Session start
+Apr-13 00:00:12.218 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Apr-13 00:00:12.253 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/ragon/.nextflow/secrets/store.json
+Apr-13 00:00:12.271 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@68b366e2] - activable => nextflow.secret.LocalSecretsProvider@68b366e2
+Apr-13 00:00:12.662 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Apr-13 00:00:12.663 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Apr-13 00:00:12.685 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Apr-13 00:00:12.698 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=4; memory=3.8 GB; capacity=4; pollInterval=100ms; dumpInterval=5m
+Apr-13 00:00:12.703 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Apr-13 00:00:12.892 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Apr-13 00:00:12.892 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Apr-13 00:00:12.908 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Apr-13 00:00:12.908 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Apr-13 00:00:12.918 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: coverageComputation, mergeCoverage, intervalQuery
+Apr-13 00:00:12.919 [main] DEBUG nextflow.Session - Igniting dataflow network (5)
+Apr-13 00:00:12.933 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > coverageComputation
+Apr-13 00:00:12.934 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > mergeCoverage
+Apr-13 00:00:12.934 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > intervalQuery
+Apr-13 00:00:12.939 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_6a2064cb96f3c3a5: /home/ragon/BGVR/chapter_06/experiment_6_5_1_b/workflow.nf
+Apr-13 00:00:12.940 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Apr-13 00:00:12.941 [main] DEBUG nextflow.Session - Session await
+Apr-13 00:00:13.533 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-13 00:00:13.538 [Task submitter] INFO  nextflow.Session - [ba/1694f3] Submitted process > coverageComputation (dummy2.bam.txt)
+Apr-13 00:00:13.560 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-13 00:00:13.561 [Task submitter] INFO  nextflow.Session - [ac/a5ba7b] Submitted process > coverageComputation (dummy1.bam.txt)
+Apr-13 00:00:13.595 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: coverageComputation (dummy2.bam.txt); status: COMPLETED; exit: 0; error: -; workDir: /home/ragon/BGVR/chapter_06/experiment_6_5_1_b/work/ba/1694f3f4e3a2d7b971484ab60ac1a2]
+Apr-13 00:00:13.597 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Apr-13 00:00:13.606 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: coverageComputation (dummy1.bam.txt); status: COMPLETED; exit: 0; error: -; workDir: /home/ragon/BGVR/chapter_06/experiment_6_5_1_b/work/ac/a5ba7b0394c9232606bca53bd681d2]
+Apr-13 00:00:13.686 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-13 00:00:13.687 [Task submitter] INFO  nextflow.Session - [c8/4429b3] Submitted process > mergeCoverage
+Apr-13 00:00:13.743 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: mergeCoverage; status: COMPLETED; exit: 0; error: -; workDir: /home/ragon/BGVR/chapter_06/experiment_6_5_1_b/work/c8/4429b324f9507666aefeefe232477f]
+Apr-13 00:00:13.808 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-13 00:00:13.810 [Task submitter] INFO  nextflow.Session - [5a/dc139e] Submitted process > intervalQuery (chr1:12-18)
+Apr-13 00:00:13.826 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-13 00:00:13.826 [Task submitter] INFO  nextflow.Session - [f8/b9a4da] Submitted process > intervalQuery (chr1:22-30)
+Apr-13 00:00:13.843 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: intervalQuery (chr1:12-18); status: COMPLETED; exit: 0; error: -; workDir: /home/ragon/BGVR/chapter_06/experiment_6_5_1_b/work/5a/dc139eb7a468e91104ef43bd08a632]
+Apr-13 00:00:13.862 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: intervalQuery (chr1:22-30); status: COMPLETED; exit: 0; error: -; workDir: /home/ragon/BGVR/chapter_06/experiment_6_5_1_b/work/f8/b9a4dadc213a9c52c06f2dcc759922]
+Apr-13 00:00:13.867 [main] DEBUG nextflow.Session - Session await > all processes finished
+Apr-13 00:00:13.963 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Apr-13 00:00:13.964 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Apr-13 00:00:13.970 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'TaskFinalizer' shutdown completed (hard=false)
+Apr-13 00:00:13.978 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=5; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=72ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=2; peakCpus=2; peakMemory=0; ]
+Apr-13 00:00:14.102 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Apr-13 00:00:14.161 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Apr-13 00:00:14.164 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
