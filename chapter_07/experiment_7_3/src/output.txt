@@ -1,0 +1,4 @@
+Processing file: "reference.fasta"
+Found 2 sequences in FASTA
+Results written to "output.json"
+Analysis completed in 37.94141ms
