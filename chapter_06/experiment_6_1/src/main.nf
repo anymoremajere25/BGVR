@@ -11,7 +11,7 @@ process coverageAnalysis {
 
     script:
     """
-    /mnt/c/Users/trian/BGVR/chapter_06/experiment_61/src/target/release/coverage_tool \
+    /mnt/c/Users/ragon/BGVR/chapter_06/experiment_6_1/src/target/release/coverage_tool \
         --bam input.bam \
         --region ${region} \
         --output coverage_${region.replace(':', '_')}.txt
