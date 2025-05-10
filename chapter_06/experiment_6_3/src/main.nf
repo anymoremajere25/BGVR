@@ -1,4 +1,4 @@
-params.input_bcf   = '/mnt/c/Users/trian/BGVR/chapter_06/experiment_63/src/wgs_cohort.bcf'
+params.input_bcf   = '/mnt/c/Users/ragon/BGVR/chapter_06/experiment_63/src/wgs_cohort.bcf'
 params.chunks_file = 'chunks_list.txt'
 params.min_qual    = 30
 params.min_depth   = 10
@@ -14,7 +14,7 @@ process filterVariants {
 
     script:
     def out_file = "filtered_${chunk.replace(':','_')}.bcf"
-    def bcf_filter_tool_path = '/mnt/c/Users/trian/BGVR/chapter_06/experiment_63/target/debug/bcf_filter_tool'
+    def bcf_filter_tool_path = '/mnt/c/Users/ragon/BGVR/chapter_06/experiment_63/target/debug/bcf_filter_tool'
 
     """
     ${bcf_filter_tool_path} \\
