@@ -1,0 +1,4 @@
+Loading GFF annotations from /mnt/c/Users/trian/BGVR/chapter_06/experiment_67/src/annotations.gff
+Starting integrative analysis on BAM: /mnt/c/Users/trian/BGVR/chapter_06/experiment_67/src/test1.bam, BCF: /mnt/c/Users/trian/BGVR/chapter_06/experiment_67/src/cohort.bcf
+Processed 1 variants.
+Variant: chr1:4 ref=A alt=T coverage=1 annotation=Some("ID=gene1;Name=GeneA")
