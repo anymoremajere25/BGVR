@@ -33,7 +33,7 @@ process alignmentOrFetch {
     script:
     """
     # Copy BAM files from the specified path to the current working directory
-    cp "/mnt/c/Users/trian/BGVR/chapter_06/experiment_64/src/${sample_id}.bam" ./
+    cp "/mnt/c/Users/ragon/BGVR/chapter_06/experiment_6_4/src/${sample_id}.bam" ./
     """
 }
 
