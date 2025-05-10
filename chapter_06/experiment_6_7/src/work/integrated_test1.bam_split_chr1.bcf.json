@@ -1,0 +1,4 @@
+Loading GFF annotations from annotations.gff
+Starting integrative analysis on BAM: test1.bam, BCF: split_chr1.bcf
+Processed 1 variants.
+Variant: chr1:4 ref=A alt=T coverage=1 annotation=Some("ID=gene1;Name=GeneA")
