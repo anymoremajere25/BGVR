@@ -1,0 +1,10 @@
+##fileformat=VCFv4.2
+##source=MockVariantCaller
+##contig=<ID=chr1,length=248956422>
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	sample1
+chr1	14653	.	A	G	100	PASS	.	GT	0/1
+chr1	14907	.	A	G	100	PASS	.	GT	0/1
+chr1	15211	.	G	A	100	PASS	.	GT	1/1
+chr1	14653	.	A	G	100	PASS	.	GT	0/1
+chr1	14907	.	A	G	100	PASS	.	GT	0/1
+chr1	15211	.	G	A	100	PASS	.	GT	1/1
