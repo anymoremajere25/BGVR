@@ -15,7 +15,7 @@ The Nextflow pipeline breaks down genomic regions and concurrently runs `coverag
 #### Project Directory Structure:
 
 ```
-experiment_61/
+experiment_6_1/
 ├── Cargo.toml              # Project dependencies
 ├── src/
 │   └── main.rs             # Rust source code
