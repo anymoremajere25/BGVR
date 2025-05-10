@@ -1,0 +1,7 @@
+Starting BAM processing application...
+VCF file noted: cohort.vcf (VCF processing not enabled)
+Add 'vcf' to noodles features in Cargo.toml to enable VCF processing
+Processing 2 BAM files...
+Processing BAM file: sample1.sorted.bam
+Processing BAM file: sample2.sorted.bam
+Processing completed successfully
