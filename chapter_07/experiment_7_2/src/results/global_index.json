@@ -1,0 +1,13 @@
+{
+  "kmers": {
+    "ACGT": 10,
+    "CGTG": 6,
+    "GTAC": 4,
+    "TACG": 3
+  },
+  "metadata": {
+    "input_files": 2,
+    "k": 31,
+    "total_kmers": 23
+  }
+}
