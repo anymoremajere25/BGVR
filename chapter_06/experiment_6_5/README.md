@@ -28,10 +28,10 @@ Such a framework is widely used in pharmaceutical R\&D to analyze large-scale ge
 
 ---
 
-### Project Structure – `experiment_65/`
+### Project Structure – `experiment_6_5/`
 
 ```
-experiment_65/
+experiment_6_5/
 ├── Cargo.toml               # Rust dependencies
 ├── src/
 │   ├── main.rs              # Rust interval tree script
