@@ -1,0 +1,36 @@
+##fileformat=VCFv4.0
+##FILTER=<ID=PASS,Description="All filters passed">
+##INFO=<ID=RS,Number=1,Type=Integer,Description="dbSNP ID (i.e. rs number)">
+##contig=<ID=chr1,length=248956422>
+##contig=<ID=chr2,length=242193529>
+##contig=<ID=chr3,length=198295559>
+##contig=<ID=chr4,length=190214555>
+##contig=<ID=chr5,length=181538259>
+##contig=<ID=chr6,length=170805979>
+##contig=<ID=chr7,length=159345973>
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+chr1	1000	rs1	A	G	100	PASS	.
+chr1	1050	rs2	T	C	100	PASS	.
+chr1	1100	rs3	G	A	100	PASS	.
+chr1	1150	rs5	C	G	100	PASS	.
+chr1	1200	rs6	T	G	100	PASS	.
+chr2	2050	rs4	C	T	100	PASS	.
+chr2	2100	rs7	G	T	100	PASS	.
+chr2	2150	rs8	A	C	100	PASS	.
+chr2	2200	rs9	T	A	100	PASS	.
+chr3	3000	rs10	C	G	100	PASS	.
+chr3	3050	rs11	A	T	100	PASS	.
+chr3	3100	rs12	G	C	100	PASS	.
+chr3	3150	rs13	T	G	100	PASS	.
+chr3	3200	rs14	A	G	100	PASS	.
+chr4	4000	rs15	T	C	100	PASS	.
+chr4	4050	rs16	C	A	100	PASS	.
+chr4	4100	rs17	G	T	100	PASS	.
+chr5	5000	rs18	A	T	100	PASS	.
+chr5	5050	rs19	T	C	100	PASS	.
+chr5	5100	rs20	C	G	100	PASS	.
+chr6	6000	rs21	G	A	100	PASS	.
+chr6	6050	rs22	T	G	100	PASS	.
+chr6	6100	rs23	A	C	100	PASS	.
+chr6	6150	rs24	C	T	100	PASS	.
+chr7	7000	rs25	G	C	100	PASS	.
