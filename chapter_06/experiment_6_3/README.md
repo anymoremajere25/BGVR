@@ -20,7 +20,7 @@ Filtered outputs per chunk (e.g., `filtered_chr1_1000-1200.bcf`) can later be me
 #### Project Structure:
 
 ```
-experiment_63/
+experiment_6_3/
 ├── Cargo.toml                   # Rust dependencies
 ├── src/
 │   ├── main.rs                  # Rust filtering script
