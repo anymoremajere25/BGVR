@@ -1,6 +1,6 @@
 ### 6.3. Variant Call Format (VCF/BCF) Handling
 
-**Project: `experiment_63`**
+**Project: `experiment_6_3`**
 
 This example demonstrates a production-ready approach to filtering BCF files in parallel using Rust. It combines `rust-htslib`, `rayon`, `clap`, `anyhow`, and `env_logger` for efficient data processing, error handling, and logging. The tool processes genomic data in configurable chunks to ensure memory efficiency, making it ideal for population-scale datasets in HPC or cloud environments.
 
