@@ -33,7 +33,7 @@ process coverageCalc {
 
     """
     # Run your coverage tool
-    /mnt/c/Users/trian/BGVR/chapter_06/experiment_68/target/debug/rust_coverage_tool \\
+    /mnt/c/Users/ragon/BGVR/chapter_06/experiment_68/target/debug/rust_coverage_tool \\
       --bam ${bam_file} \\
       --region ${region} \\
       --out ${output_name}
