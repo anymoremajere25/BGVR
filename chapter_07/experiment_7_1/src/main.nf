@@ -1,6 +1,6 @@
 params.bam_list = "bams.txt"
 params.vcf_file = "cohort.vcf"
-params.rust_bin = "/mnt/c/Users/trian/BGVR/chapter_07/experiment_71/target/debug"
+params.rust_bin = "/mnt/c/Users/ragon/BGVR/chapter_07/experiment_7_1/target/debug"
 
 process rustCoverageRunner {
     input:
