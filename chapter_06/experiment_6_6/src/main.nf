@@ -43,7 +43,7 @@ process collectQC {
         """
     } else {
         """
-        /mnt/c/Users/trian/BGVR/chapter_06/experiment_66/target/debug/coverage_tool \
+        /mnt/c/Users/ragon/BGVR/chapter_06/experiment_66/target/debug/coverage_tool \
           --bam ${bam_file} \
           --region ${params.region} > qc_${bam_file}.txt
         """
