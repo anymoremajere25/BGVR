@@ -1,0 +1,1 @@
+Would execute: echo 'Mock kmer tool execution' --merge partial_chunk_2.json partial_chunk_1.json --output global_index.json
