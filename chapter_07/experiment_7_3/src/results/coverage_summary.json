@@ -1,0 +1,7 @@
+{
+  "total_regions": 6,
+  "min_coverage": 10,
+  "max_coverage": 20,
+  "mean_coverage": 15,
+  "median_coverage": 15.0
+}
