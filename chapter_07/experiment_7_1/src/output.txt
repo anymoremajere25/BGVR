@@ -1,0 +1,23 @@
+Starting BAM processing application...
+VCF file noted: cohort.vcf (VCF processing not enabled)
+Add 'vcf' to noodles features in Cargo.toml to enable VCF processing
+Processing 2 BAM files...
+Processing BAM file: sample1.sorted.bam
+Processing BAM file: sample2.sorted.bam
+Successfully read BAM header
+Successfully read BAM header
+Reference sequences count: 2
+Reference sequences count: 2
+  Reference: chr1 (length: 5000)
+  Reference: chr1 (length: 5000)
+  Reference: chr2 (length: 5000)
+  Reference: chr2 (length: 5000)
+Record #1: Position=Some(Position(1500)), MAPQ=60, CIGAR=[Ok(Op { kind: Match, len: 128 })]
+Record #2: Position=Some(Position(2000)), MAPQ=60, CIGAR=[Ok(Op { kind: Match, len: 128 })]
+Record #3: Position=Some(Position(3500)), MAPQ=60, CIGAR=[Ok(Op { kind: Match, len: 128 })]
+Record #1: Position=Some(Position(1500)), MAPQ=60, CIGAR=[Ok(Op { kind: Match, len: 128 })]
+Record #2: Position=Some(Position(3500)), MAPQ=60, CIGAR=[Ok(Op { kind: Match, len: 128 })]
+Record #4: Position=Some(Position(3800)), MAPQ=60, CIGAR=[Ok(Op { kind: Match, len: 128 })]
+Total records processed from sample2.sorted.bam: 4
+Total records processed from sample1.sorted.bam: 2
+Processing completed successfully
