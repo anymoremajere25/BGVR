@@ -108,9 +108,9 @@
    Compiling bio-types v1.0.4
    Compiling clap v4.5.37
    Compiling rust-htslib v0.49.0
-   Compiling bam_read_counter v0.1.0 (/mnt/c/Users/trian/BGVR/chapter_06/experiment_64)
+   Compiling bam_read_counter v0.1.0 (/mnt/c/Users/ragon/BGVR/chapter_06/experiment_6_4)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 15m 55s
-     Running `/mnt/c/Users/trian/BGVR/chapter_06/experiment_64/target/debug/bam_read_counter --bam sample1.bam --region 'chr1:1-10' 'chr1:1-32'`
+     Running `/mnt/c/Users/ragon/BGVR/chapter_06/experiment_6_4/target/debug/bam_read_counter --bam sample1.bam --region 'chr1:1-10' 'chr1:1-32'`
 Starting parallel read counting on file: sample1.bam
 Processing regions: ["chr1:1-10", "chr1:1-32"]
 Successfully processed 2 out of 2 regions.
