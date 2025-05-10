@@ -1,0 +1,12 @@
+{
+  "kmers": {
+    "ACGT": 5,
+    "CGTG": 3,
+    "GTAC": 2
+  },
+  "metadata": {
+    "filename": "chunk_2.fa",
+    "k": 31,
+    "total_kmers": 10
+  }
+}
