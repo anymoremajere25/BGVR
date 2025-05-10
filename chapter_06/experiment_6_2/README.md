@@ -19,7 +19,7 @@ Nextflow efficiently distributes the workload by region, executing one ephemeral
 **File Structure:**
 
 ```
-experiment_62/
+experiment_6_2/
 ├── Cargo.toml                   # Dependency configuration
 ├── src/
 │   ├── main.rs                  # Rust script
