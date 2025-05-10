@@ -65,7 +65,7 @@ process integrateData {
     
     echo "Processing BAM: ${bam_file}, BCF: ${bcf_file}, GFF: ${gff_file}"
     
-    /mnt/c/Users/trian/BGVR/chapter_06/experiment_67/target/debug/rust_integrate_tool \
+    /mnt/c/Users/ragon/BGVR/chapter_06/experiment_67/target/debug/rust_integrate_tool \
       --bam ${bam_file} \
       --bcf ${bcf_file} \
       --gff ${gff_file} > integrated_\$(basename ${bam_file})_\$(basename ${bcf_file}).json
