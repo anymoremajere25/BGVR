@@ -1,0 +1,5 @@
+Starting coverage tool on file: sample1.bam
+Processing regions: ["chr1:1-32"]
+Successfully processed 1 out of 1 regions.
+Total coverage: 9
+Total mismatches: 9
