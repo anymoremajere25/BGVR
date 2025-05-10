@@ -1,0 +1,8 @@
+Interval tree built with 7 intervals.
+Query [1, 10] => found 3 intervals
+Query [0, 5] => found 3 intervals
+Query [50, 60] => found 2 intervals
+Query [40, 70] => found 3 intervals
+Query [5, 25] => found 4 intervals
+Query [30, 32] => found 2 intervals
+Query [20, 40] => found 4 intervals
