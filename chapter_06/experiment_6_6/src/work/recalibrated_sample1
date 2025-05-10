@@ -1,0 +1,4 @@
+This is a mock recalibrated BAM file for sample1
+Created using QC data from merged_qc.json
+Original BAM: sample1
+Region: chr1:1-32
