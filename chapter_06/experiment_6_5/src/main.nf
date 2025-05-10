@@ -42,7 +42,7 @@ process coverageComputation {
         # The Rust coverage tool here would parse the BAM file via rust-htslib,
         # compute coverage intervals (possibly using an ndarray for efficient numeric ops),
         # and output them as TSV. Each ephemeral task handles one BAM.
-        /mnt/c/Users/trian/BGVR/chapter_06/experiment_65/target/debug/rust_coverage_tool \
+        /mnt/c/Users/ragon/BGVR/chapter_06/experiment_6_5/target/debug/rust_coverage_tool \
             --bam ${bam_file} \
             --out coverage_${bam_file}.tsv \
             --chunk-size ${params.parallel_chunck_size}
@@ -111,7 +111,7 @@ process intervalQuery {
         # The Rust interval query tool reads merged coverage intervals, builds an interval tree,
         # and retrieves overlapping intervals for the specified query range. This can occur in parallel
         # when multiple queries are submitted concurrently in HPC or cloud environments.
-        /mnt/c/Users/trian/BGVR/chapter_06/experiment_65/target/debug/interval_query_tool \
+        /mnt/c/Users/ragon/BGVR/chapter_06/experiment_6_5/target/debug/interval_query_tool \
            --interval-file ${merged_coverage} \
            --query "${query_interval}" \
            > query_result_${query_interval}.tsv
