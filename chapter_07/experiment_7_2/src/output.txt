@@ -1,0 +1,1 @@
+Global index written to global_index.json
