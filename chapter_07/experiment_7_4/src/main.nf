@@ -7,7 +7,7 @@ params.sample_list = 'vcf_list.txt'
 params.output_vcf = 'merged.vcf'
 params.threads = 4
 params.format = 'bcf'
-params.tool_path = "/mnt/c/Users/trian/BGVR/chapter_07/experiment_74/target/debug/rust_vcf_merge_tool"
+params.tool_path = "/mnt/c/Users/ragonn/BGVR/chapter_07/experiment_7_4/target/debug/rust_vcf_merge_tool"
 
 // Define the workflow
 workflow {
