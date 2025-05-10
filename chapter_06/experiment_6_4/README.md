@@ -17,7 +17,7 @@ Rust and Nextflow are increasingly popular among AI engineers and bioinformatici
 #### Project Structure:
 
 ```
-experiment_64/
+experiment_6_4/
 ├── Cargo.toml                     # Rust project dependencies
 ├── src/
 │   ├── main.rs                   # Rust script
