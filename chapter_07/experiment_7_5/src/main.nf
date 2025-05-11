@@ -18,7 +18,7 @@ process RUN_COVERAGE {
     script:
     """
     echo "Running coverage on sample: ${sample_id}"
-    /mnt/c/Users/trian/BGVR/chapter_07/experiment_75/target/debug/rust_coverage_tool --bam ${bam_file} --bai ${bai_file} --region chr1:10000-10100 > ${sample_id}.coverage.json
+    /mnt/c/Users/ragon/BGVR/chapter_0_7/experiment_7_5/target/debug/rust_coverage_tool --bam ${bam_file} --bai ${bai_file} --region chr1:10000-10100 > ${sample_id}.coverage.json
     """
 }
 
