@@ -1,0 +1,27 @@
+Starting pangenome analysis with 8 threads
+Reading variants from cohort_A.vcf
+Reading variants from cohort_B.vcf
+Read 1000 variants from cohort_A.vcf in 5.77ms
+Read 1000 variants from cohort_B.vcf in 6.09ms
+Variant set comparison:
+  A∪B = 2000 variants
+  A∩B = 0 variants
+  A\B = 1000 variants
+  B\A = 1000 variants
+  Jaccard index = 0.0000
+
+DataFrame query results:
+  Variants in CSV: 1000
+  DataFrame schema: Schema:
+name: CHROM, field: String
+name: POS, field: Int64
+name: REF, field: String
+name: ALT, field: String
+name: GT, field: String
+name: GQ, field: Int64
+name: DP, field: Int64
+
+  Note: Statistics calculation disabled for polars 0.47.0 compatibility
+Exported DataFrame with 1000 rows to query_results.parquet
+
+Total execution time: 55.27ms
