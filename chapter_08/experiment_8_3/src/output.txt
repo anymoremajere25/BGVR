@@ -1,0 +1,13 @@
+[2m2025-05-10T04:44:03.101470Z[0m [32m INFO[0m [2mvariant_caller[0m[2m:[0m Threads 8
+[2m2025-05-10T04:44:03.105145Z[0m [32m INFO[0m [2mvariant_caller[0m[2m:[0m Using simplified BAM stub
+[2m2025-05-10T04:44:03.110677Z[0m [32m INFO[0m [2mvariant_caller[0m[2m:[0m Regions 1
+[2m2025-05-10T04:44:02.526180Z[0m [32m INFO[0m [2mvariant_caller[0m[2m:[0m Exported 10
+=== Variant Calling Summary ===
+Total targets processed: 1
+Targets with variants: 1
+Total variants called: 10
+Transition/Transversion ratio: 0.00
+Runtime: 1.35 seconds
+Threads used: 8
+Parameters:
+  min_depth: 8
