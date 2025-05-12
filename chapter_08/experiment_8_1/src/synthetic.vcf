@@ -1,0 +1,6 @@
+##fileformat=VCFv4.2
+##INFO=<ID=NS,Number=1,Type=Integer,Description="Number of Samples With Data">
+##contig=<ID=1,length=249250621>
+#CHROM  POS     ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  Sample1 Sample2 Sample3
+1       12345   .       A       G       50.0    PASS    NS=3    GT      0/0     0/1     1/1
+1       67890   .       T       C       40.0    PASS    NS=3    GT      0/1     1/1     0/0

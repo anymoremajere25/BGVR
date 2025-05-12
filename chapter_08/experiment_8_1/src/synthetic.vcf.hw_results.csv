@@ -1,0 +1,3 @@
+chrom,pos,ref_allele,alt_allele,hw_pvalue
+1,12345,A,G,0.5637028616507731
+1,67890,T,C,0.5637028616507731
