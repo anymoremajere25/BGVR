@@ -1,11 +1,24 @@
 [package]
-name = "genomic_interval_tree"
+name = "epigenomic-peak-caller"
 version = "0.1.0"
 edition = "2021"
 
+[[bin]]
+name = "peak_caller"
+path = "src/main.rs"
+
 [dependencies]
-anyhow = "1.0"
+rust-htslib = "0.46"
+rayon = "1.8"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
 clap = { version = "4.0", features = ["derive"] }
-env_logger = "0.10"
+anyhow = "1.0"
 log = "0.4"
-rayon = "1.7"
+env_logger = "0.10"
+bio = "1.6"
+itertools = "0.12"
+statrs = "0.16"
+
+[dev-dependencies]
+tempfile = "3.0"
