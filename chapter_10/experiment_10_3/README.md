@@ -1,6 +1,6 @@
 
 
-## 🧪 Experiment 10\_3 — Signal Normalization and Quality Control
+## Experiment 10\_3 — Signal Normalization and Quality Control
 
 This experiment implements a **comprehensive quality control (QC) and signal normalization framework** for ChIP-seq and ATAC-seq data using a hybrid toolchain built in **Rust**, **Python**, and **Nextflow**. It provides reproducible, scalable, and interpretable QC metrics crucial for downstream peak calling, normalization, and integration tasks.
 
