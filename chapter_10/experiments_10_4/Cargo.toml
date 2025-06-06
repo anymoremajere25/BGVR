@@ -1,11 +1,70 @@
 [package]
-name = "interval_query_tool"
-version = "0.1.0"
+name = "fragment-shift-estimator"
+version = "0.4.0"
 edition = "2021"
+authors = ["ChIP-seq Analysis Team"]
+description = "Cross-correlation based fragment shift estimation for ChIP-seq data"
+
+[[bin]]
+name = "shift_estimator"
+path = "src/main.rs"
+
+[[bin]]
+name = "peak_caller"
+path = "src/peak_caller.rs"
+
+[[bin]]
+name = "shift_reads"
+path = "src/shift_reads.rs"
+
+[[bin]]
+name = "coverage_analyzer"
+path = "src/coverage_analyzer.rs"
 
 [dependencies]
-anyhow = "1.0"
+rust-htslib = "0.46"
+rayon = "1.8"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
 clap = { version = "4.0", features = ["derive"] }
-env_logger = "0.10"
+anyhow = "1.0"
 log = "0.4"
-rayon = "1.5"
+env_logger = "0.10"
+bio = "1.6"
+itertools = "0.12"
+statrs = "0.16"
+ndarray = "0.15"
+dashmap = "5.5"
+crossbeam = "0.8"
+indicatif = "0.17"
+chrono = { version = "0.4", features = ["serde"] }
+flate2 = "1.0"
+csv = "1.3"
+regex = "1.10"
+num-complex = "0.4"
+rustfft = "6.1"
+
+[dev-dependencies]
+tempfile = "3.0"
+criterion = "0.5"
+approx = "0.5"
+
+[[bench]]
+name = "shift_benchmarks"
+harness = false
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+debug = false
+
+[profile.dev]
+opt-level = 1
+debug = true
+
+[features]
+default = ["fft-acceleration"]
+fft-acceleration = ["rustfft"]
+simd-optimization = []
