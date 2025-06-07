@@ -1,11 +1,71 @@
 [package]
-name = "interval_query_tool"
-version = "0.1.0"
+name = "chipseq-peak-caller"
+version = "0.1.0" 
 edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "A simple peak-calling module for ChIP-Seq data analysis"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/username/chipseq-peak-caller"
+keywords = ["bioinformatics", "genomics", "chipseq", "peak-calling"]
+categories = ["science", "command-line-utilities"]
 
 [dependencies]
-anyhow = "1.0"
-clap = { version = "4.0", features = ["derive"] }
-env_logger = "0.10"
-log = "0.4"
-rayon = "1.5"
+# No external dependencies needed for core functionality!
+# All functionality uses only Rust standard library
+
+[dev-dependencies]
+# For testing with temporary files
+tempfile = "3.8"
+
+# Optional dependencies for enhanced functionality
+[dependencies.clap]
+version = "4.4"
+features = ["derive"]
+optional = true
+
+[dependencies.serde]
+version = "1.0"
+features = ["derive"]
+optional = true
+
+[dependencies.serde_json]
+version = "1.0"
+optional = true
+
+[dependencies.rayon]
+version = "1.8"
+optional = true
+
+[dependencies.flate2]
+version = "1.0"
+optional = true
+
+[dependencies.bio]
+version = "1.6"
+optional = true
+
+# Features for optional functionality
+[features]
+default = []
+cli = ["clap"]
+parallel = ["rayon"]
+json = ["serde", "serde_json"]
+compression = ["flate2"]
+bio-utils = ["bio"]
+full = ["cli", "parallel", "json", "compression", "bio-utils"]
+
+# Example binary for command-line usage
+[[bin]]
+name = "peak-caller"
+path = "src/bin/peak_caller.rs"
+required-features = ["cli"]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[profile.dev]
+opt-level = 0
+debug = true
