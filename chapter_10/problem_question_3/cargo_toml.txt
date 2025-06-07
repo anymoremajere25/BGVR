@@ -1,0 +1,60 @@
+[package]
+name = "atac-seq-tools"
+version = "1.0.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "Rust-based tools for ATAC-Seq data processing pipeline"
+license = "MIT"
+repository = "https://github.com/your-org/atac-seq-tools"
+
+[[bin]]
+name = "atac_aligner"
+path = "src/bin/atac_aligner.rs"
+
+[[bin]]
+name = "bam_indexer"
+path = "src/bin/bam_indexer.rs"
+
+[[bin]]
+name = "tss_calculator"
+path = "src/bin/tss_calculator.rs"
+
+[[bin]]
+name = "qc_aggregator"
+path = "src/bin/qc_aggregator.rs"
+
+[dependencies]
+clap = { version = "4.0", features = ["derive"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+anyhow = "1.0"
+thiserror = "1.0"
+tokio = { version = "1.0", features = ["full"] }
+rayon = "1.7"
+itertools = "0.12"
+regex = "1.0"
+log = "0.4"
+env_logger = "0.10"
+
+[dev-dependencies]
+tempfile = "3.0"
+criterion = "0.5"
+
+[[bench]]
+name = "alignment_benchmark"
+harness = false
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[profile.dev]
+opt-level = 0
+debug = true
+
+[features]
+default = ["parallel"]
+parallel = ["rayon"]

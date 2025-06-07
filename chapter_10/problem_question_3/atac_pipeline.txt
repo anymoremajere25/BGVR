@@ -1,0 +1,248 @@
+#!/usr/bin/env nextflow
+
+nextflow.enable.dsl = 2
+
+/*
+ * ATAC-Seq Data Processing Pipeline
+ * 
+ * This pipeline processes ATAC-Seq data through alignment, TSS enrichment calculation,
+ * and quality control report generation using Rust-based tools.
+ */
+
+// Pipeline parameters
+params.input_dir = "./data/fastq"
+params.output_dir = "./results"
+params.reference_genome = "./reference/genome.fa"
+params.tss_bed = "./reference/tss_sites.bed"
+params.rust_tools_dir = "./rust_tools"
+params.publish_mode = "copy"
+
+// Tool parameters
+params.aligner_threads = 4
+params.aligner_memory = "8G"
+params.tss_window_size = 2000
+params.quality_threshold = 30
+
+// Validation
+if (!file(params.reference_genome).exists()) {
+    error "Reference genome file not found: ${params.reference_genome}"
+}
+
+if (!file(params.tss_bed).exists()) {
+    error "TSS BED file not found: ${params.tss_bed}"
+}
+
+log.info """
+ATAC-Seq Processing Pipeline
+============================
+Input directory    : ${params.input_dir}
+Output directory   : ${params.output_dir}
+Reference genome   : ${params.reference_genome}
+TSS BED file       : ${params.tss_bed}
+Rust tools dir     : ${params.rust_tools_dir}
+Threads            : ${params.aligner_threads}
+Memory             : ${params.aligner_memory}
+TSS window size    : ${params.tss_window_size}
+Quality threshold  : ${params.quality_threshold}
+"""
+
+/*
+ * Create input channel from paired FASTQ files
+ */
+workflow {
+    // Create channel from FASTQ pairs
+    fastq_ch = Channel
+        .fromFilePairs("${params.input_dir}/*_{R1,R2,1,2}.{fastq,fq}{,.gz}", 
+                       size: 2, 
+                       checkIfExists: true)
+        .map { sample_id, files -> 
+            tuple(sample_id, files[0], files[1])
+        }
+
+    // Main workflow
+    main:
+        align_atac(fastq_ch)
+        tss_enrich(align_atac.out)
+        aggregate_qc(tss_enrich.out.collect())
+}
+
+/*
+ * Process 1: Align ATAC-Seq reads using Rust aligner
+ */
+process align_atac {
+    tag "$sample_id"
+    
+    publishDir "${params.output_dir}/alignments", 
+               mode: params.publish_mode,
+               pattern: "*.{bam,bai,log}"
+    
+    cpus params.aligner_threads
+    memory params.aligner_memory
+    
+    container 'rust-atac-tools:latest'
+    
+    input:
+    tuple val(sample_id), path(read1), path(read2)
+    
+    output:
+    tuple val(sample_id), path("${sample_id}.sorted.bam"), path("${sample_id}.sorted.bam.bai"), emit: aligned_bam
+    path "${sample_id}_alignment.log", emit: align_log
+    path "${sample_id}_stats.json", emit: align_stats
+    
+    script:
+    """
+    # Run Rust-based ATAC-Seq aligner
+    ${params.rust_tools_dir}/atac_aligner \\
+        --reference ${params.reference_genome} \\
+        --read1 ${read1} \\
+        --read2 ${read2} \\
+        --output ${sample_id}.sorted.bam \\
+        --threads ${task.cpus} \\
+        --quality-threshold ${params.quality_threshold} \\
+        --remove-duplicates \\
+        --remove-mitochondrial \\
+        --log-file ${sample_id}_alignment.log \\
+        --stats-json ${sample_id}_stats.json
+
+    # Index the BAM file
+    ${params.rust_tools_dir}/bam_indexer \\
+        --input ${sample_id}.sorted.bam \\
+        --output ${sample_id}.sorted.bam.bai
+    
+    echo "Alignment completed for sample: ${sample_id}" >> ${sample_id}_alignment.log
+    """
+    
+    stub:
+    """
+    touch ${sample_id}.sorted.bam
+    touch ${sample_id}.sorted.bam.bai
+    touch ${sample_id}_alignment.log
+    echo '{"sample": "${sample_id}", "total_reads": 1000000, "mapped_reads": 950000}' > ${sample_id}_stats.json
+    """
+}
+
+/*
+ * Process 2: Calculate TSS enrichment scores
+ */
+process tss_enrich {
+    tag "$sample_id"
+    
+    publishDir "${params.output_dir}/tss_enrichment", 
+               mode: params.publish_mode,
+               pattern: "*.{json,bed,png}"
+    
+    cpus 2
+    memory '4G'
+    
+    container 'rust-atac-tools:latest'
+    
+    input:
+    tuple val(sample_id), path(bam_file), path(bai_file)
+    
+    output:
+    tuple val(sample_id), path("${sample_id}_tss_enrichment.json"), emit: tss_scores
+    path "${sample_id}_tss_profile.bed", emit: tss_profile
+    path "${sample_id}_tss_plot.png", emit: tss_plot
+    path "${sample_id}_tss.log", emit: tss_log
+    
+    script:
+    """
+    # Calculate TSS enrichment using Rust tool
+    ${params.rust_tools_dir}/tss_calculator \\
+        --bam ${bam_file} \\
+        --tss-bed ${params.tss_bed} \\
+        --window-size ${params.tss_window_size} \\
+        --output-json ${sample_id}_tss_enrichment.json \\
+        --output-profile ${sample_id}_tss_profile.bed \\
+        --output-plot ${sample_id}_tss_plot.png \\
+        --sample-name ${sample_id} \\
+        --threads ${task.cpus} \\
+        --log-file ${sample_id}_tss.log
+    
+    echo "TSS enrichment calculation completed for sample: ${sample_id}" >> ${sample_id}_tss.log
+    """
+    
+    stub:
+    """
+    echo '{"sample": "${sample_id}", "tss_enrichment": 8.5, "signal_to_noise": 12.3}' > ${sample_id}_tss_enrichment.json
+    touch ${sample_id}_tss_profile.bed
+    touch ${sample_id}_tss_plot.png
+    touch ${sample_id}_tss.log
+    """
+}
+
+/*
+ * Process 3: Aggregate QC metrics into final report
+ */
+process aggregate_qc {
+    publishDir "${params.output_dir}/qc_report", 
+               mode: params.publish_mode
+    
+    cpus 2
+    memory '4G'
+    
+    container 'rust-atac-tools:latest'
+    
+    input:
+    path tss_files
+    
+    output:
+    path "atac_seq_qc_report.html", emit: html_report
+    path "atac_seq_qc_summary.json", emit: json_summary
+    path "qc_metrics_table.tsv", emit: metrics_table
+    path "aggregate_qc.log", emit: qc_log
+    
+    script:
+    def tss_json_files = tss_files.findAll { it.name.endsWith('_tss_enrichment.json') }
+    def tss_json_list = tss_json_files.collect { it.name }.join(',')
+    
+    """
+    # Collect all alignment stats
+    find . -name "*_stats.json" -type f > alignment_stats_list.txt
+    
+    # Aggregate QC metrics using Rust tool
+    ${params.rust_tools_dir}/qc_aggregator \\
+        --tss-files ${tss_json_list} \\
+        --alignment-stats alignment_stats_list.txt \\
+        --output-html atac_seq_qc_report.html \\
+        --output-json atac_seq_qc_summary.json \\
+        --output-table qc_metrics_table.tsv \\
+        --pipeline-version "1.0.0" \\
+        --analysis-date "\$(date)" \\
+        --log-file aggregate_qc.log
+    
+    echo "QC aggregation completed successfully" >> aggregate_qc.log
+    echo "Report generated: atac_seq_qc_report.html" >> aggregate_qc.log
+    """
+    
+    stub:
+    """
+    echo '<html><body><h1>ATAC-Seq QC Report</h1></body></html>' > atac_seq_qc_report.html
+    echo '{"total_samples": 3, "average_tss_enrichment": 8.2}' > atac_seq_qc_summary.json
+    echo -e "sample\\ttss_enrichment\\tmapped_reads" > qc_metrics_table.tsv
+    touch aggregate_qc.log
+    """
+}
+
+/*
+ * Workflow completion handler
+ */
+workflow.onComplete {
+    log.info """
+    Pipeline execution summary
+    ---------------------------
+    Completed at: ${workflow.complete}
+    Duration    : ${workflow.duration}
+    Success     : ${workflow.success}
+    Work dir    : ${workflow.workDir}
+    Exit status : ${workflow.exitStatus}
+    Error report: ${workflow.errorReport ?: 'N/A'}
+    """
+    
+    if (workflow.success) {
+        log.info "ATAC-Seq pipeline completed successfully!"
+        log.info "Results are available in: ${params.output_dir}"
+    } else {
+        log.error "Pipeline execution failed!"
+    }
+}
