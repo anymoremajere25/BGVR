@@ -1,10 +1,10 @@
-# 🧬 Multi-Omics Integration and Nextflow Pipelines (Experiment_10_5)
+## Multi-Omics Integration and Nextflow Pipelines (Experiment_10_5)
 
 This experiment contains a production-grade pipeline for multi-omics integration, combining high-resolution ChIP-seq/ATAC-seq peak detection and RNA-seq-based expression profiling with robust statistical analysis, all orchestrated via Nextflow. The pipeline includes:
 
 ---
 
-## 📦 Project Structure
+###  Project Structure
 
 ```text
 .
@@ -18,7 +18,7 @@ This experiment contains a production-grade pipeline for multi-omics integration
 
 ---
 
-## 🚀 Pipeline Overview
+### Pipeline Overview
 
 This pipeline performs:
 
@@ -46,7 +46,7 @@ This pipeline performs:
 
 ---
 
-## ⚙️ Technologies Used
+### ⚙️ Technologies Used
 
 | Language/Tool    | Role                                                                  |
 | ---------------- | --------------------------------------------------------------------- |
@@ -60,9 +60,9 @@ This pipeline performs:
 
 ---
 
-## 📝 Example Usage
+### 📝 Example Usage
 
-### 1. Run the Full Pipeline with Nextflow
+#### 1. Run the Full Pipeline with Nextflow
 
 ```bash
 nextflow run main.nf \
@@ -71,7 +71,7 @@ nextflow run main.nf \
   --reference_genome './reference/genome.fa'
 ```
 
-### 2. Run Coverage Calculation Independently
+#### 2. Run Coverage Calculation Independently
 
 ```bash
 cargo run --release --bin calc_rs -- \
@@ -86,7 +86,7 @@ cargo run --release --bin calc_rs -- \
   --verbose
 ```
 
-### 3. Run Multi-Omics Integration
+#### 3. Run Multi-Omics Integration
 
 ```bash
 cargo run --release --bin multiomics_rs -- \
@@ -115,7 +115,7 @@ cargo run --release --bin multiomics_rs -- \
 
 ---
 
-## 📈 Visualization and Reporting
+### 📈 Visualization and Reporting
 
 * Interactive HTML dashboards for QC and summary
 * GraphML network for significant gene-gene co-regulation
@@ -123,7 +123,7 @@ cargo run --release --bin multiomics_rs -- \
 
 ---
 
-## 🧪 Simulated Test Data
+### 🧪 Simulated Test Data
 
 To create a synthetic dataset for benchmarking:
 
@@ -140,7 +140,7 @@ Generates:
 
 ---
 
-## 🧠 Applications
+### 🧠 Applications
 
 * Chromatin accessibility and TF binding analysis
 * Gene expression vs chromatin state association
@@ -149,7 +149,7 @@ Generates:
 
 ---
 
-## 📚 Citation and Attribution
+### 📚 Citation and Attribution
 
 If you use this pipeline in your work, please cite:
 
